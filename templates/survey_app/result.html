@@ -1,0 +1,24 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width" />
+            <title>Result</title>
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'survey_app/css/result.css' %}" type="text/css" media="all" />
+        </head>
+        <body>
+            {% if messages %}
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            <div>
+                <h3>Submitted Information</h3>
+                <p>Name: {{ name }}</p>
+                <p>Dojo Loccation: {{ location }}</p>
+                <p>Favorite Language: {{ lang }}</p>
+                <p>Comment: {{ comment }}</p>
+            </div>
+        </body>
+    </html>

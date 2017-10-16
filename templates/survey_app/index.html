@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width" />
+            <title>Survey</title>
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'survey_app/css/main.css' %}" type="text/css" media="all" />
+        </head>
+        <body>
+            <form action="/survey/process" method="post" accept-charset="utf-8">
+                {% csrf_token %}
+                <label>Name: <input type="text" name="name" id="name" value="" /></label>
+                <label>Dojo Location: <select name="location" id="location" >
+                        <option value="Seattle">Seattle</option>
+                        <option value="San Jose">San Jose</option>
+                        <option value="Other">Other</option>
+                    </select></label>
+                    <label>Favorite Language: <select name="lang" id="lang" >
+                            <option value="Rust">Rust</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Python">Python</option>
+                        </select></label>
+                <p>Comment (optional): </p>
+                <textarea name="comment" id=""></textarea>
+                <input type="submit" name="submit" id="submit" value="Submit" />
+            </form>
+        </body>
+    </html>
